@@ -32,22 +32,19 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 4. 백엔드 이미지 빌드
       - name: Backend Docker Build
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/yj-backend:${{ github.sha }} ./backend
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/yj-backend:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/yj-backend:latest
+          docker build -t jaehongjang1/yj-backend:${{ github.sha }} ./backend
+          docker tag jaehongjang1/yj-backend:${{ github.sha }} jaehongjang1/yj-backend:latest
 
-      # 5. 프런트엔드 이미지 빌드
       - name: Frontend Docker Build
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/yj-frontend:${{ github.sha }} ./frontend
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/yj-frontend:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/yj-frontend:latest
+          docker build -t jaehongjang1/yj-frontend:${{ github.sha }} ./frontend
+          docker tag jaehongjang1/yj-frontend:${{ github.sha }} jaehongjang1/yj-frontend:latest
 
-      # 6. Docker Hub에 Push
       - name: Docker Hub Push
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/yj-backend:${{ github.sha }}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/yj-backend:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/yj-frontend:${{ github.sha }}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/yj-frontend:latest
+          docker push jaehongjang1/yj-backend:${{ github.sha }}
+          docker push jaehongjang1/yj-backend:latest
+          docker push jaehongjang1/yj-frontend:${{ github.sha }}
+          docker push jaehongjang1/yj-frontend:latest
