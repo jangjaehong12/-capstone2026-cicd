@@ -12,7 +12,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/members")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://43.207.204.183:63342/api/members") // AWS EC2 서버주소로 변경
 public class MemberController {
 
     private final MemberRepository memberRepository;
