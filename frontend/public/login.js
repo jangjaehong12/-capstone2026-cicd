@@ -1,5 +1,5 @@
-// 백엔드 API 기본 주소
-const API_BASE_URL = "http://localhost:8080/api/members";
+// 백엔드 API 기본 주소 - localhost를 AWS EC2 서버 주소로 변경
+const API_BASE_URL = "http://43.207.204.183:8080/api/members";
 
 /**
  * 1. 회원가입 함수 (POST /api/members/register)
