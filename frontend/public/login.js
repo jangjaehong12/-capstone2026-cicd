@@ -1,5 +1,5 @@
 // 백엔드 API 기본 주소
-const API_BASE_URL = "http://localhost:8080/api/members";
+const API_BASE_URL = "http://43.207.204.183:8080/api/members";
 
 /**
  * 1. 회원가입 함수 (POST /api/members/register)
@@ -47,7 +47,7 @@ async function handleLogin() {
 
     try {
         const response = await fetch(`${API_BASE_URL}/login`, {
-            method: 'POST', // REST 규약에 따라 본문에 데이터를 담기 위해 POST 사용
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(loginData)
         });

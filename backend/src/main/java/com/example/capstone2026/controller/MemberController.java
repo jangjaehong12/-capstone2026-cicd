@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/members")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:63342") // 리액트 서버 포트 허용_____
+@CrossOrigin(origins = "http://43.207.204.183:63342:63342") // AWS EC2 서버주소로 변경
 public class MemberController {
 
     private final MemberRepository memberRepository;
